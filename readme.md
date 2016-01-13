@@ -1,2 +1,2 @@
 # Interview Questions
-This repository contains samples of interview questions I have encountered. Most of these are Data Science/Engineering related. 
+This repository contains samples of interview questions we have encountered. Most of these are Data Science/Engineering related. 
