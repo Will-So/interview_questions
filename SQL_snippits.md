@@ -82,3 +82,11 @@ SELECT player_name,
             WHEN weight > 175 AND weight <= 200 THEN '176-200'
             ELSE '175 or under' END AS weight_group
   FROM benn.college_football_players
+
+
+
+SELECT player_name, pl.school_name, teams.division 
+FROM benn.college_football_players pl
+JOIN benn.college_football_teams teams
+ON pl.school_name = teams.school_name
+ WHERE teams.division = 'FBS (Division I-A Teams)'
