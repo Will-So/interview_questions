@@ -1,0 +1,29 @@
+---
+title: "r_notes_2"
+output: html_document
+---
+
+# Hands on with Dplyr:
+http://www.r-bloggers.com/dplyr-tutorial-verbs-split-apply/
+
+```{r}
+data(mtcars)
+data = mtcars
+
+data$cyl = factor(data$cyl)
+```
+
+
+Before we had the split-apply-combine pattern. Now we can do something liek this.
+
+
+```{r}
+library(dplyr)
+vars = c("mpg","wt","qsec")
+data %>% group_by(cyl) %>% select(one_of(vars)) %>% summarise_each(funs(median(.)))
+
+```
+
+So it is essentially the piping operation:
+![](https://github.com/dgrapov/TeachingDemos/blob/master/Demos/dplyr/images/pipe.png?raw=true)
+

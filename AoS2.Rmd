@@ -1,0 +1,14 @@
+---
+title: "AoS_2"
+output: html_document
+---
+
+Random variables link sample spaces and probability to data. 
+
+A random variable maps a Real number $X(\omega)$ to each outcome, $\omega$. The sample space rarely gets mentioned in practice and we usually work directly with Random variables but the sample space is alwas there.
+
+Example: Let $X(\omega)$ be the number of heads in the sequence $\omega$. If $\omega = HHTHHTHHTT$ then $X(\omega) = 6$
+
+The inverse CDF is also known as the Quantile function. 
+
+"Here is an example which I borrowed" is great wording
