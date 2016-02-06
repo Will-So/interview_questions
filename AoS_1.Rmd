@@ -1,0 +1,26 @@
+---
+title: "AoS CH1"
+output: html_document
+---
+
+Term | Definition
+-- | --
+Sample space | Set of possible outcomes of an experiment
+Event | subset of sample space
+
+The event space of a physical quantity can be $\Omega = (-\inf, \inf)$. We can have events in ranges (e.g., between 10 and 23. ). Sets are monotonically increasing if $A_1 \subset A_2 \subset A_3$
+
+Disjoint properties are important because they occur in cases of flipping coins -- either the result is heads or tails. It can;t be both. 
+
+![](https://dl.dropboxusercontent.com/u/97258109/Screens/S3719.png)
+
+![](https://dl.dropboxusercontent.com/u/97258109/Screens/S3720.png)
+![](https://dl.dropboxusercontent.com/u/97258109/Screens/S3721.png)
+
+If the event space is finite and each outcome is equally likely, we have that 
+
+![](https://dl.dropboxusercontent.com/u/97258109/Screens/S3722.png)
+
+![](https://dl.dropboxusercontent.com/u/97258109/Screens/S3723.png)
+
+![](https://dl.dropboxusercontent.com/u/97258109/Screens/S3724.png)
