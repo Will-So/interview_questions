@@ -138,15 +138,18 @@ fitted_results = predict(model, newdata=test, type='response')
 ```{r}
 library(ROCR)
 p <- predict(model, newdata=subset(test,select=c(2,3,4,5,6,7,8)), type="response")
+?predict
 pr <- prediction(p, test$Survived)
 prf <- performance(pr, measure = "tpr", x.measure = "fpr")
 plot(prf)
 
 auc <- performance(pr, measure = "auc")
-auc <- auc@y.values[[1]]
+auc <- auc@y.values[[1]] # This just extracts the correct slot
 auc
 ```
 AUC is area under the ROC curve. The ROC box is a 1 by 1 box and so we can just use that as our maximum.
 
 ?performance
+
+p
 
