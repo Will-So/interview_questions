@@ -1,0 +1,16 @@
+---
+title: "r_vs_python"
+output: html_document
+---
+
+# Python Benefits
+- The ecosystem seems less fractured than R
+  - ROCR, dplyr, data.table, data.frame
+- R Syntax is quite annoying
+  - That periods can be naming conventions is infururating
+  - slicing syntax
+  - df[2, ]. That empy comma there is too magical.
+
+# R Benefits
+- Causal Impact
+- GGPLOT
