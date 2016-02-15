@@ -136,20 +136,34 @@ fitted_results = predict(model, newdata=test, type='response')
 ?predict.glm obtains predictions and standard errors of predictions from glm models. TODO: Find the different `type` arguments. 
 
 ```{r}
-library(ROCR)
+library(pROC)
 p <- predict(model, newdata=subset(test,select=c(2,3,4,5,6,7,8)), type="response")
-?predict
 pr <- prediction(p, test$Survived)
+
+# This is a part of the ROCR object
+
 prf <- performance(pr, measure = "tpr", x.measure = "fpr")
-plot(prf)
+plot(prf, col=rainbow(10))
 
 auc <- performance(pr, measure = "auc")
 auc <- auc@y.values[[1]] # This just extracts the correct slot
 auc
 ```
-AUC is area under the ROC curve. The ROC box is a 1 by 1 box and so we can just use that as our maximum.
 
-?performance
 
-p
+AUC is area under the ROC curve. The ROC box is a 1 by 1 box and so a value of 1.0 is perfect (represents 100% of the area) whereas a value of 0.5 is a completely useless model. If we have an ROC partially below our diagonal, we can just bet against our model to get a prediction better than random chance. 
 
+
+```{r}
+
+plt = plot.roc(test$Survived, p, 
+               main="ROC w/ Confidence Intervals", percent=TRUE, 
+               ci=TRUE,  print.auc=TRUE) 
+
+ciobj <- ci.se(plt, specificities=seq(0, 100, 5))
+plot(ciobj, type="shape", col="#1c61b6AA") 
+plot(ci(plt, of="thresholds", thresholds="best"))
+```
+
+
+?lubridate
